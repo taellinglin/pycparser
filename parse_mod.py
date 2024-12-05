@@ -2,7 +2,7 @@ import shutil
 import ast
 import astor
 
-def backup_and_modify_c_parser(filepath):
+def backup_and_modify_parser(filepath):
     # Backup the original file
     backup_path = filepath.replace(".py", "_original.py")
     shutil.copy(filepath, backup_path)
@@ -15,8 +15,8 @@ def backup_and_modify_c_parser(filepath):
     # Add default docstrings to functions without them
     class DocstringAdder(ast.NodeTransformer):
         def visit_FunctionDef(self, node):
-            if not ast.get_docstring(node):
-                node.body.insert(0, ast.Expr(value=ast.Str("Auto-added docstring")))
+            if not ast.get_docstring(node):  # If docstring is missing
+                node.body.insert(0, ast.Expr(value=ast.Str("Auto-added docstring")))  # Add a default docstring
             return node
 
     modified_tree = DocstringAdder().visit(tree)
@@ -27,6 +27,6 @@ def backup_and_modify_c_parser(filepath):
         file.write(modified_code)
     print(f"Modified file saved: {filepath}")
 
-# Run the script
-original_file_path = "c_parser.py"  # Replace with your file path if different
-backup_and_modify_c_parser(original_file_path)
+# Run the script for parse_mod.py
+original_file_path = "c_parser.py"  # Replace with your file path
+backup_and_modify_parser(original_file_path)
