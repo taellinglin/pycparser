@@ -6,12 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "pycparser"
 version = "2.21"
 description = "A C parser and AST generator written in pure Python"
-readme = "README.md"
-requires-python = ">=3.6"
-authors = [{name = "Eli Bendersky", email = "eliben@gmail.com"}]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent"
-]
 dynamic = ["readme", "requires-python", "authors", "classifiers"]
+
+# You can also define the 'readme' field dynamically as it will be sourced from the 'README.md' file later
