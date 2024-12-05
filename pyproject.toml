@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycparser"
+version = "2.21"
+description = "A C parser and AST generator written in pure Python"
+readme = "README.md"
+authors = [
+    {name = "Eli Bendersky", email = "eliben@gmail.com"},
+]
+homepage = "https://github.com/taellinglin/pycparser"
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[tool.setuptools]
+packages = ["pycparser"]
