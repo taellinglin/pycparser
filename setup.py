@@ -4,7 +4,7 @@ setup(
     name="pycparser",  # Use the appropriate project name
     version="2.21",  # Replace with the correct version if available
     description="A C parser and AST generator written in pure Python",
-    long_description=open("README.md").read(),
+    long_description = "A C parser and AST generator written in pure Python",
     long_description_content_type="text/markdown",
     author="Eli Bendersky",
     author_email="eliben@gmail.com",
